@@ -1,0 +1,576 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2?family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #000;
+}
+
+.container {
+    max-width: 1330px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1142px 1fr 188px;
+}
+
+.item {
+    background: black;
+
+    /* Grid checken? - dann hier auskommentieren  */
+    //border: #d400d4 1px solid;  
+}
+
+/* FOTO VON SPIELER  */
+.spieler_03 {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: right;
+    margin-top: -150px;
+    margin-left: 65px;
+    filter: drop-shadow(0 0 1rem #00b5f3);
+}
+
+/* GRAFIK VON CARD  */
+.wrapper {
+    position: relative;
+    top: 10px;
+    left: -270px;
+}
+.dodging2 {
+    position: absolute;
+    z-index: 4;
+    width: 300px;
+    height: 200px;
+    background: #000;
+    margin-left: 0px;
+    margin-top: -50px;
+}
+.outline2 {
+    position: absolute;
+    z-index: 3; 
+    width: 360px;
+    height: 265px;
+    background: #000;
+    border: 5px solid;
+    border-color: #00b5f3;
+    border-radius: 50px;
+    margin-left: 45px;
+}
+.dodging1 {
+    position: absolute;
+    z-index: 2;
+    width: 55px;
+    height: 100px;
+    background: #000;
+    margin-left: 33px;
+    margin-top: 200px;
+}
+.outline1 {
+    position: absolute;
+    z-index: 1;
+    width: 370px;
+    height: 280px;
+    border: 5px solid;
+    border-color: #00b5f3;
+    border-radius: 50px;
+    margin-left: 47px;
+}
+.card {
+    position: absolute;
+    z-index: 5;
+    font-family: "Roboto", sans-serif;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+h1 {
+    text-align: right;
+    width: 400px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+    color: #00b5f3;
+    margin-top: 0px;
+    margin-left: -90px;
+    filter: drop-shadow(0 0 1rem #00b5f3);
+}
+h2 {
+    text-align: right;
+    width: 400px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #00b5f3;
+    margin-top: 0.7rem;
+    margin-left: -92px;
+    filter: drop-shadow(0 0 1rem #00b5f3);
+}
+p {
+    text-align: right;
+    font-weight: normal;
+    width: 320px;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 1rem;
+    margin-left: -10px;
+}
+
+
+.circle_1 {
+    position: absolute;
+    z-index: 5;
+    background-color: #fff;
+    margin-top: 60px;
+    margin-left: -620px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #00b5f3;
+    border-radius: 100px;
+    filter: drop-shadow(0 0 0.4rem #00b5f3);
+}
+.circle_2 {
+    position: absolute;
+    z-index: 4;
+    margin-top: 50px;
+    margin-left: -631px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #00b5f3;
+    border-radius: 100px;
+}
+.circle_3 {
+    position: absolute;
+    z-index: 3;
+    margin-top: 41px;
+    margin-left: -641px;
+    width: 140px;
+    height: 140px;
+    border: 1px dashed #00b5f3;
+    border-radius: 100px;
+}
+
+.wrapper_pie-chart {
+    width: 400px;
+    height: 100px;
+    margin-top: 140px;
+    margin-left: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pie-chart {
+    background: radial-gradient(
+	circle closest-side,
+	transparent 100%, #000),
+		
+		conic-gradient(
+		    from 180deg,
+		    #00b5f3 0,
+		    #00b5f3 20%,
+		    #00b5f3 0,
+		    #00b5f3 40%,
+		    #005f80 0,
+		    #005f80 60%,
+		    #4b7da4 0,
+		    #4b7da4 80%,
+		    #00b5f3 0,
+		    #00b5f3 100%
+		);
+    
+    min-width:  65px;
+    min-height: 65px;
+}
+.wrapper_pie-chart_numbers {
+    width: 420px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    margin-left: -35px;
+}
+.pie-chart_numbers {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+}
+.wrapper_pie-chart_description {
+    position: absolute;
+    z-index: 3;
+    margin-top: 20px;
+    margin-left: 500px;
+    width: 500px;
+    height: 150px;
+}
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #00b5f3;
+    margin-top: 50px;
+    margin-left: 103px;
+}
+.pie-chart_description {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    margin-left: 32px;
+}
+
+/* GRAFIK - BAR CHART  */
+.container .box {
+    position: relative;
+}
+
+.container .box li {
+    position: absolute;
+    top: 3.5em;
+    width: 16px;
+    height: 260px;
+    background: linear-gradient(to right top, #4b7da4, #005f80);
+    list-style: none;
+    margin-top: 700px;
+}
+
+.container .box li:nth-child(1) {left: 2.5em;}
+.container .box li:nth-child(2) {left: 5em;}
+.container .box li:nth-child(3) {left: 7.5em;}
+.container .box li:nth-child(4) {left: 10em;}
+.container .box li:nth-child(5) {left: 12.5m;}
+
+.container .box li .text {
+    position: absolute;
+    top: -2em;
+    left: -0.3em;
+    background: transparent;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.container .box li .bar {
+    position: absolute;
+    bottom: 0;
+    background: #00b5f3;
+    width: 100%;
+    height: 50%;
+}
+
+/* GRAFIK - PUNKTE UNTER DEM BAR CHART  */
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    animation: animate 1.6s ease-in-out infinite;
+}
+@keyframes animate
+{
+    0%, 40%, 100%
+    {
+	transform: scale(0.2);
+    }
+    20%
+    {
+	transform: scale(1);
+    }
+}
+ul li:nth-child(1){
+    animation-delay: -1.4s;
+    background: #00b5f3;
+    box-shadow: 0 0 50px #00b5f3;
+}
+ul li:nth-child(2){
+    animation-delay: -1.2s;
+    background: #005f80;
+    box-shadow: 0 0 50px #005f80;
+}
+ul li:nth-child(3){
+    animation-delay: -1s;
+    background: #4b7da4;
+    box-shadow: 0 0 50px #4b7da4;
+}
+ul li:nth-child(4){
+    animation-delay: -0.8s;
+    background: #00b5f3;
+    box-shadow: 0 0 50px #00b5f3;
+}
+ul li:nth-child(5){
+    animation-delay: -0.6s;
+    background: #4b7da4;
+    box-shadow: 0 0 50px #4b7da4;
+}
+
+/* DICKE GESTRICHELTE LINIEN */
+.dashed-fat-line1 {
+    position: absolute;
+    z-index: 6;
+    height: 1px;
+    width: 540px;
+    border-bottom: 0.35rem dashed #00b5f3;
+    margin-top: -1px;
+    margin-left: -242px;
+}
+.dashed-fat-line2 {
+    position: absolute;
+    z-index: 6;
+    height: 1px;
+    width: 500px;
+    border-bottom: 0.35rem dashed #00b5f3;
+    margin-top: 148px;
+    margin-left: -450px;
+}
+.dashed-fat-line3 {
+    position: absolute;
+    z-index: 6;
+    height: 400px;
+    width: 10px;
+    border-right: 0.3rem dashed #00b5f3;
+    margin-top: 203px;
+    margin-left: -505px;
+}
+.dashed-fat-line4 {
+    position: absolute;
+    z-index: 6;
+    height: 200px;
+    width: 10px;
+    border-right: 0.3rem dashed #00b5f3;
+    margin-top: 618px;
+    margin-left: 320px;
+}
+.dashed-fat-line5 {
+    position: absolute;
+    z-index: 6;
+    height: 50px;
+    width: 10px;
+    border-right: 0.3rem dashed #00b5f3;
+    margin-top: 770px;
+    margin-left: 686px;
+}
+.dashed-fat-line6 {
+    position: absolute;
+    z-index: 6;
+    height: 375px;
+    width: 10px;
+    border-right: 0.3rem dashed #00b5f3;
+    margin-top: 445px;
+    margin-left: 1100px;
+}
+.dashed-fat-line7 {
+    position: absolute;
+    z-index: 6;
+    height: 50px;
+    width: 10px;
+    border-right: 0.3rem dashed #00b5f3;
+    margin-top: -50px;
+    margin-left: -248px;
+}
+
+/* DUENNE GESTRICHELTE LINIEN */
+.dashed-slim-line1 {
+    position: absolute;
+    z-index: 6;
+    height: 200px;
+    width: 1px;
+    border-right: 0.1rem dashed #00b5f3;
+    margin-top: 618px;
+    margin-left: 320px;
+}
+.dashed-slim-line2 {
+    position: absolute;
+    z-index: 6;
+    height: 50px;
+    width: 1px;
+    border-right: 0.1rem dashed #00b5f3;
+    margin-top: 770px;
+    margin-left: 686px;
+}
+.dashed-slim-line3 {
+    position: absolute;
+    z-index: 6;
+    height: 340px;
+    width: 1px;
+    border-right: 0.1rem dashed #00b5f3;
+    margin-top: 480px;
+    margin-left: 1100px;
+}
+.dashed-slim-line4 {
+    position: absolute;
+    z-index: 6;
+    height: 100px;
+    width: 1px;
+    border-right: 0.1rem dashed #00b5f3;
+    margin-top: -20px;
+    margin-left: -501px;
+}
+.dashed-slim-line5 {
+    position: absolute;
+    z-index: 6;
+    height: 10px;
+    width: 1000px;
+    border-bottom: 0.1rem dashed #00b5f3;
+    margin-top: -18px;
+    margin-left: -1500px;
+}
+
+/* DUENNE GESTRICHELTE KREISE VOM SPIELER */
+.dashed-circle_1 {
+    position: absolute;
+    z-index: 4;
+    margin-top: 565px;
+    margin-left: 280px;
+    width: 70px;
+    height: 70px;
+    border: 1px dashed #00b5f3;
+    border-radius: 100px;
+}
+.dashed-circle_2 {
+    position: absolute;
+    z-index: 3;
+    margin-top: 560px;
+    margin-left: 275px;
+    width: 80px;
+    height: 80px;
+    border: 1px dashed #00b5f3;
+    border-radius: 100px;
+}
+
+/* DICKER UND DUENNER KREIS VOM BALL */
+.fat-circle-ball {
+    position: absolute;
+    z-index: 5;
+    margin-top: 243px;
+    margin-left: 884px;
+    width: 250px;
+    height: 250px;
+    border: 8px solid #00b5f3;
+    border-radius: 100%;
+    filter: drop-shadow(0 0 0.4rem #00b5f3);
+}
+.slim-dashed-circle-ball {
+    position: absolute;
+    z-index: 5;
+    margin-top: 224px;
+    margin-left: 863px;
+    width: 290px;
+    height: 290px;
+    border: 1px dashed #00b5f3;
+    border-radius: 100%;
+    filter: drop-shadow(0 0 0.4rem #00b5f3);
+}
+    </style>
+    <title>Container 3</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">
+        <div class="wrapper animate__animated animate__fadeInLeft">
+          <div class="card">
+	    <div class="circle_1 animate__heartBeat animate__delay-5s"></div>
+       	     <div class="circle_2 animate__animated animate__zoomIn"></div>
+             <div class="circle_3 animate__animated animate__zoomIn"></div>
+            <h1>HEADLINE HEADLINE</h1>
+            <h2>SUBLINE SUBLINE SUBLINE</h2>
+            <p>He shoots he scores nothing but <br>net back line semester forward pack<br>
+	       slam dunk ball four take a walk drop goal, goaltender slog sweep over cow
+	       corner ref back line lineout, penalty game of two halves nothing but net slog
+	       sweep over cow corner. 
+	    </p>
+          </div>
+          <div class="dashed-fat-line1 animate__animated animate__fadeInLeft"></div>
+          <div class="dashed-fat-line2 animate__animated animate__fadeInRight"></div>
+	  <div class="dashed-fat-line3 animate__animated animate__fadeInUp"></div>
+	  <div class="dashed-slim-line4 animate__animated animate__fadeInDown"></div>
+	  <div class="dashed-fat-line7 animate__animated animate__fadeInUp"></div>
+	  <div class="dashed-slim-line5 animate__animated animate__fadeInLeft"></div>
+          <div class="dodging1"></div>
+          <div class="outline1"></div>
+          <div class="dodging2"></div>
+          <div class="outline2"></div>
+        </div>
+      </div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5
+      </div>
+      <div class="item">Item 6</div>
+      <div class="item">
+	<div class="wrapper_pie-chart animate__animated animate__fadeInUp">
+	  <div class="pie-chart"></div>
+          <div class="pie-chart"></div>
+          <div class="pie-chart"></div>
+          <div class="pie-chart"></div>
+          <div class="pie-chart"></div>
+	</div>
+	<div class="wrapper_pie-chart_description animate__animated animate__fadeInDown">
+          <div class="wrapper_pie-chart_numbers animate__animated animate__zoomIn">
+              <p class="pie-chart_numbers">60%</p>
+	      <p class="pie-chart_numbers">80%</p>
+	      <p class="pie-chart_numbers">30%</p>
+	      <p class="pie-chart_numbers">70%</p>
+	      <p class="pie-chart_numbers">40%</p>
+	    </div>
+	    <h3>SUBLINE SUBLINE SUBLINE</h3>
+          <p class="pie-chart_description">Rolling maul drop goal loose ball beep test Famous
+	                                   awww ref awww ref back line lineout, penalty game
+            </p>
+	  </div>
+	<img class="spieler_03 animate__animated animate__fadeInDown animate__faster" src="img/Spieler_03.png" alt="...">
+	<div class="dashed-fat-line4 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-fat-line5 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-fat-line6 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-slim-line1 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-slim-line2 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-slim-line3 animate__animated animate__fadeInDown"></div>
+	<div class="dashed-circle_1 animate__animated animate__bounceInLeft"></div>
+        <div class="dashed-circle_2 animate__animated animate__bounceInLeft"></div>
+	<div class="fat-circle-ball animate__animated animate__bounceInUp"></div>
+	<div class="slim-dashed-circle-ball
+		    animate__animated animate__zoomInUp animate__faster"></div>
+      </div>
+      <div class="item">Item 8</div>
+      <div class="item">
+	<div class="box">
+          <li><span class="text">60%</span><span class="bar bar1"></span></li>
+          <li><span class="text">30%</span><span class="bar bar1"></span></li>
+          <li><span class="text">80%</span><span class="bar bar1"></span></li>
+          <li><span class="text">70%</span><span class="bar bar1"></span></li>
+          <li><span class="text">40%</span><span class="bar bar1"></span></li>
+       <!-- <div class="points">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div> -->
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

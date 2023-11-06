@@ -1,0 +1,146 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "", sans-serif;
+    background-color: #000;
+}
+
+a{
+    text-decoration: none;
+    color: #00b5f3;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header/Navbar */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 0 30px;
+}
+
+/* Logo */
+.logo {
+    position: fixed;
+    top: 5px;
+    right: 25px;
+    width: 126px;
+    height: auto;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop Main Menu */
+.desktop-main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop-main-menu ul {
+    display: flex;
+}
+
+.desktop-main-menu ul li {
+    position: relative;
+    margin-right: 15px;
+    padding-top: 18px;
+    padding-bottom: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #00b5f3;
+}
+
+/* Menu item bottom border */
+.desktop-main-menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00b5f3;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+}
+
+.desktop-main-menu ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+/* DICKE UND DUENNE LINIE  */
+.fat-vertical-line {
+    position: absolute;
+    z-index: 6;
+    height: 150px;
+    width: 1px;
+    border-right: 0.3rem solid #00b5f3;
+    margin-left: 257px;
+    filter: drop-shadow(0 0 0.4rem #00b5f3);
+}
+.slim-dashed-vertical-line {
+    position: absolute;
+    z-index: 6;
+    height: 150px;
+    width: 1px;
+    border-right: 0.1rem dashed #00b5f3;
+    margin-left: 274px;
+    filter: drop-shadow(0 0 0.4rem #00b5f3);
+}
+
+    </style>
+
+    <title>Header</title>
+  </head>
+  <body>
+    
+    <header>
+      <div class="fat-vertical-line
+		  animate__animated animate__fadeInDown animate__faster"></div>
+      <div class="slim-dashed-vertical-line
+		  animate__animated animate__fadeInDown animate__faster"></div>
+      <div class="logo">
+	<a href="index.htm">
+	  <img src="img/Logo.png" alt="WWE MEDIA SPORT">
+	</a>
+      </div>
+      <nav class="desktop-main-menu">
+	<ul>
+	  <li><a href="index.htm">PRODUKTE</a></li>
+	  <li><a href="index.htm">KI</a></li>
+	  <li><a href="index.htm">ÜBER UNS</a></li>
+	  <li><a href="index.htm">KONTAKT</a></li>
+	</ul>
+      </nav>
+    </header>
+
+  </body>
+</html>
